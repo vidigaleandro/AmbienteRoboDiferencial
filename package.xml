@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>diff_robot</name>
+  <version>1.0.0</version>
+  <description>The diff_robot package</description>
+
+  <maintainer email="vidigaleandro@gmail.com">leandro</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>gazebo_ros</depend>
+  <depend>tf2</depend>
+  <depend>geometry_msgs</depend>
+  <depend>urdf</depend>
+  <depend>rviz</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>controller_manager</depend>
+  <depend>ros_control</depend>
+  <depend>ros_controllers</depend>
+
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>
