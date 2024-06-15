@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/opt/ros/noetic/include/**",
+                "/home/leandro/Leandro/Mestrado/Planejamento/Projetos/differentialrobot_ws/src/diff_robot/include/**",
+                "/usr/include/**",
+                "/usr/include/gazebo-11",
+                "/usr/include/gazebo-11/gazebo/physics"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}

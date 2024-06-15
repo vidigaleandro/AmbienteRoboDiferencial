@@ -1,0 +1,18 @@
+Utilizado ROS Noetic
+
+Montar uma ws e colocar o pacote diff_robot no pasta source
+
+catkin_make para construir o pacote
+
+source devel/setup.bash
+
+Comandos para os exercícios
+
+1- Abrir no Coppelia Pioneer Python .ttt
+1.a- Executar main.py
+
+2 - roslaunch diff_robot launch_car_in_gazebo_parametric.launch
+3 - roslaunch diff_robot launch_car_in_gazebo_potential_field.launch 
+4 - roslaunch diff_robot launch_car_in_gazebo_min_field.launch 
+
+OBS o exercicio 1 não foi feito com ROS
