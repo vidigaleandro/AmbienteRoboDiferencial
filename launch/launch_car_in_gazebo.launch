@@ -1,0 +1,39 @@
+<launch>
+    <!-- Define the path to the main Xacro file -->
+    <arg name="xacro_path" default="$(find diff_robot)/world/robot.urdf.teste.xacro" />
+
+    <!-- Set use_sim_time parameter for all nodes to use Gazebo's simulated time -->
+    <param name="/use_sim_time" value="true"/>
+
+    <!-- Generate robot_description from Xacro file -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg xacro_path)'" />
+
+    <!-- Include Gazebo launch with custom world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find diff_robot)/world/ground.world"/>
+        <arg name="use_sim_time" value="true"/>
+    </include>
+
+    <!-- Optionally, if teleoperation is required, uncomment this section 
+    <node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />-->
+
+    <!-- Run the script to add the car model -->
+    <node name="spawn_car_model" pkg="diff_robot" type="spawn_car.py" output="screen" />
+
+    <!-- Endpoint Publisher Node -->
+    <node name="endpoint_publisher" pkg="diff_robot" type="set_endpoint.py" output="screen">
+        <param name="use_sim_time" value="true"/>
+    </node>
+
+    <!-- Controller Node -->
+    <node name="controller" pkg="diff_robot" type="controller.py" output="screen">
+        <param name="use_sim_time" value="true"/>
+    </node>
+
+    <!-- Command Node -->
+
+    <node name="command" pkg="diff_robot" type="command_node.py" output="screen">
+        <param name="use_sim_time" value="true"/>
+    </node>
+
+</launch>

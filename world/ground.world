@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="ground_world">
+    <!-- Configuração do ambiente -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+
+    <!-- Modelo de chão com atrito configurado -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.5</mu>         <!-- Coeficiente de atrito estático -->
+                <mu2>0.3</mu2>       <!-- Coeficiente de atrito dinâmico -->
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
